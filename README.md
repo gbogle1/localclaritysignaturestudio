@@ -1,9 +1,12 @@
 Final launch checklist:
 
-***Replace placeholder Demo and Ticket URLs.*** For demo, should lead to gcal. For ticket, need a direct link.
+***Replace placeholder Demo and Ticket URLs.*** For demo, should lead to Sam's booking system. For ticket, need a direct link.
 Confirm the office address and main website are current.
 Test Lead, Client, and No CTA configurations.
 Test a long job title.
+Picture for sales.
+3 options/formats can isert that right after welcome page
+Saved profiles/team data (6 slots)
 Paste the rich signature into Gmail and send a real email.
 Verify logo, links, button, and spacing in Gmail.
 Test on mobile and at least one non-Gmail inbox.
