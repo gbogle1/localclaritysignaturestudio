@@ -6,6 +6,7 @@ Signatures can include variation of engagement maxxing
 3 options/formats can isert that right after welcome page
 End game could be gtm tracking -extensions
 Saved profiles/team data (6 slots)
+Connect to Supabase
 
 
 Confirm the office address and main website are current.
