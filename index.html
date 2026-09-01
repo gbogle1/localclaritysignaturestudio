@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LocalClarity's delightfully overqualified Gmail signature maker.">
+  <title>LocalClarity Signature Thing™</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="welcome-screen" id="welcomeScreen" aria-labelledby="welcome-title">
+      <div class="topline" aria-hidden="true">
+        <span>LOCALCLARITY</span><span>///</span><span>SIGNATURE_GENERATOR</span>
+      </div>
+
+      <div class="welcome-content">
+        <p class="terminal-label">[ a tiny internal tool ]</p>
+        <h1 id="welcome-title">Make your inbox<br><span>look employed.</span></h1>
+        <p class="welcome-copy">A painless way to make a very serious email signature.<br>Because a subscription is just a bit too much.</p>
+        <button class="start-button" id="startButton" type="button">
+          Build my signature <span aria-hidden="true">→</span>
+        </button>
+        <p class="tiny-note">Takes about 45 seconds. Allegedly.</p>
+      </div>
+
+      <div class="welcome-footer" aria-hidden="true">
+        <span>v1.0</span>
+        <span>MADE FOR PEOPLE WHO HAVE EMAILS</span>
+        <span>CHICAGO, IL</span>
+      </div>
+    </section>
+
+    <section class="builder-screen" id="builderScreen" aria-labelledby="builder-title" hidden>
+      <header class="builder-header">
+        <button class="wordmark" id="restartButton" type="button" aria-label="Return to welcome screen">
+          <span class="wordmark-dot"></span> LOCALCLARITY <em>/ signature thing</em>
+        </button>
+        <p class="builder-aside">No logins. No tracking. No need to get too personal with it.</p>
+      </header>
+
+      <div class="builder-layout">
+        <section class="form-area">
+          <div class="progress-head">
+            <p id="stepText">STEP 01 / 04</p>
+            <p id="progressText">THE BASICS</p>
+          </div>
+          <div class="progress-track" aria-label="Form progress"><div id="progressFill" class="progress-fill"></div></div>
+
+          <form id="signatureForm" novalidate>
+            <div class="form-step active" data-step="1">
+              <p class="kicker">01 — WHO ARE YOU?</p>
+              <h2 id="builder-title">Let’s put a name<br>on the internet.</h2>
+              <p class="form-copy">The one you use in emails! Not your extremely good Slack display name. </p>
+
+              <label for="name">YOUR NAME</label>
+              <input id="name" name="name" type="text" maxlength="60" placeholder="e.g. Grace Bogle" autocomplete="name" required>
+            </div>
+
+            <div class="form-step" data-step="2">
+              <p class="kicker">02 — WHAT DO YOU DO?</p>
+              <h2>Give your role<br>the proper nouns.</h2>
+              <p class="form-copy">Keep it official-ish. This is going in front of clients, after all. Also, you can always create more than one signature. I know we all wear many hats.</p>
+
+              <label for="title">POSITION TITLE</label>
+              <input id="title" name="title" type="text" maxlength="90" placeholder="e.g. Associate Product Engagement" autocomplete="organization-title" required>
+
+              <label for="email">LOCALCLARITY EMAIL</label>
+              <input id="email" name="email" type="email" maxlength="120" placeholder="you@localclarity.com" autocomplete="email" required>
+            </div>
+
+            <div class="form-step" data-step="3">
+              <p class="kicker">03 — PICK YOUR BUTTON</p>
+              <h2>What should people<br>do next?</h2>
+              <p class="form-copy">One tasteful nudge. Zero pop-ups. We are better than that.</p>
+
+              <div class="cta-options" role="radiogroup" aria-label="Call to action choice">
+                <label class="choice-card selected">
+                  <input type="radio" name="ctaType" value="lead" checked>
+                  <span class="choice-number">A</span>
+                  <span><strong>BOOK A DEMO</strong><small>For lead-facing people.</small></span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="ctaType" value="client">
+                  <span class="choice-number">B</span>
+                  <span><strong>SUBMIT A TICKET</strong><small>For client-facing people.</small></span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="ctaType" value="none">
+                  <span class="choice-number">C</span>
+                  <span><strong>NO BUTTON</strong><small>It is great to be niche.</small></span>
+                </label>
+              </div>
+
+              <div class="url-fields">
+                <div class="url-field active" data-url-for="lead">
+                  <label for="demoUrl">DEMO BOOKING LINK</label>
+                  <input id="demoUrl" name="demoUrl" type="url" placeholder="https://..." value="https://www.localclarity.com/">
+                </div>
+                <div class="url-field" data-url-for="client">
+                  <label for="ticketUrl">TICKET SUBMISSION LINK</label>
+                  <input id="ticketUrl" name="ticketUrl" type="url" placeholder="https://..." value="https://www.localclarity.com/">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-step" data-step="4">
+              <p class="kicker">04 — SHIP IT</p>
+              <h2>One last thing:<br>make it official.</h2>
+              <p class="form-copy">We copied the good version—the logo, links, spacing, and all. Gmail is up next.</p>
+
+              <div class="finish-actions">
+                <button class="action-button primary" id="copyButton" type="button">
+                  <span aria-hidden="true">▣</span> Copy signature
+                </button>
+                <a class="action-button secondary" href="https://mail.google.com/mail/u/0/#settings/general" target="_blank" rel="noopener noreferrer">
+                  Open Gmail settings <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+
+              <div class="paste-cheatsheet">
+                <span>THE FINAL BOSS:</span>
+                <p>Gmail Settings → See all settings → Signature → paste → Save Changes.</p>
+              </div>
+            </div>
+
+            <div class="navigation">
+              <button class="back-button is-hidden" id="backButton" type="button">← Back</button>
+              <button class="next-button" id="nextButton" type="button">Continue <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="preview-area" aria-label="Live Gmail signature preview">
+          <div class="preview-label"><span class="pulse-dot"></span> LIVE PREVIEW</div>
+          <div class="email-card">
+            <div class="email-top"><span></span><span></span><span></span></div>
+            <div class="email-content">
+              <p>Best,</p>
+              <div id="signaturePreview"></div>
+            </div>
+          </div>
+          <p class="preview-caption">This is your new email signature! How nice.</p>
+        </aside>
+      </div>
+
+      <footer class="builder-footer">
+        <span>POWERED BY HTML, HELD TOGETHER BY 1 HOUR VIBE CODING</span>
+        <span>© LOCALCLARITY, INBOX DEPARTMENT</span>
+      </footer>
+    </section>
+  </main>
+
+  <template id="signatureTemplate">
+    <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+      <tr>
+        <td style="padding:16px 16px 16px 0;">
+          <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+            <tr>
+              <td colspan="3" style="padding:0 0 2px 0;font-size:17px;line-height:21px;font-weight:600;color:#051e34;" data-signature-name></td>
+            </tr>
+            <tr>
+              <td colspan="3" style="padding:0 0 8px 0;font-size:14px;line-height:19px;color:#333333;"><span style="font-weight:700;">LocalClarity</span> <span data-signature-title></span></td>
+            </tr>
+            <tr>
+              <td valign="top" style="padding:0 14px 0 0;"><img src="https://cdn.prod.website-files.com/60bfe5e646f0e71d8656b49e/65d54e200c7f4e6e4655f1bd_LocalClarity-256.png" alt="LocalClarity" width="60" style="display:block;border:0;outline:none;text-decoration:none;"></td>
+              <td valign="top" style="width:2px;background:#051e34;font-size:1px;line-height:1px;">&nbsp;</td>
+              <td valign="top" style="padding:0 0 0 14px;">
+                <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+                  <tr><td style="padding:1px 0;font-size:13px;color:#051e34;font-weight:700;">a:</td><td style="padding:1px 0 0 8px;font-size:13px;color:#333333;">101 N Wacker Drive, Suite 110 &bull; Chicago, IL 60606</td></tr>
+                  <tr><td style="padding:1px 0;font-size:13px;color:#051e34;font-weight:700;">w:</td><td style="padding:1px 0 0 8px;font-size:13px;"><a href="https://www.localclarity.com/" style="color:#1697f6;text-decoration:underline;">www.localclarity.com</a></td></tr>
+                  <tr><td style="padding:1px 0;font-size:13px;color:#051e34;font-weight:700;">e:</td><td style="padding:1px 0 0 8px;font-size:13px;"><a data-signature-email-link style="color:#1697f6;text-decoration:underline;"></a></td></tr>
+                  <tr data-signature-cta-row>
+  <td colspan="2" align="left" style="padding:10px 0 0 0;text-align:left;">
+    <a
+      data-signature-cta-link
+      style="display:inline-block;background:#1697f6;color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;line-height:16px;text-decoration:none;padding:8px 13px;border:1px solid #0e7dce;border-radius:999px;"
+    ></a>
+  </td>
+</tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
