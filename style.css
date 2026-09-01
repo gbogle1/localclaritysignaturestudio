@@ -187,7 +187,7 @@ input.invalid { border-color: var(--error); }
 .email-top span:first-child { background: #ef8a82; }
 .email-top span:nth-child(2) { background: #e8c669; }
 .email-top span:nth-child(3) { background: #8bc889; }
-.email-content { min-width: 410px; padding: 16px 14px 9px; }
+.email-content { min-width: 0; padding: 16px 14px 9px; }
 .email-content > p { margin: 0 0 1px; color: #464646; font-family: Arial, sans-serif; font-size: 12px; }
 .preview-caption { margin: 16px 0 0; color: var(--muted); font-family: "DM Mono", monospace; font-size: 10px; line-height: 1.5; }
 
