@@ -5,7 +5,7 @@ Picture for sales
 Signatures can include variation of engagement maxxing
 3 options/formats. Can insert that right after welcome page
 End game could be gtm tracking -extensions
-Saved profiles/team data (6 slots)
+Saved profiles/team data, profile can include for support, updates, etc
 Connect to Supabase
 
 
