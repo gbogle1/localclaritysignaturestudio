@@ -3,7 +3,7 @@ Final launch checklist:
 ***Replace placeholder Demo and Ticket URLs.*** For demo, should lead to Sam's booking system. For ticket, need a direct link.
 Picture for sales
 Signatures can include variation of engagement maxxing
-3 options/formats can isert that right after welcome page
+3 options/formats. Can insert that right after welcome page
 End game could be gtm tracking -extensions
 Saved profiles/team data (6 slots)
 Connect to Supabase
@@ -20,18 +20,4 @@ Share the link with a small pilot group first.
 Adjust based on 2–3 teammate tests, then roll it out
 
 
-Gmail Integration:
 
-GitHub Pages
-    ↓
-Signature Studio front end
-    ↓
-“Install in Gmail” button
-    ↓
-Google OAuth authorization
-    ↓
-Small serverless backend
-    ↓
-Gmail Settings API
-    ↓
-Signature saved to teammate’s Gmail account
